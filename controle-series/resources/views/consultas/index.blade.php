@@ -2,7 +2,21 @@
 
 
 @section('cabecalho')
-Consultas de {{$paciente->nome}}
+
+<div class="row d-flex justify-content-end align-items-center">
+    <div class="col col-7">
+        Consultas de {{$paciente->nome}}
+    </div>
+    <div class="col col-2 mt-2">
+        <h2>Voltar</h2>
+    </div>
+    <div class="col col-3">
+        <a href="/pacientes" class="btn btn-info btn-sm mr-2 ">
+            <i class="fas fa-external-link-alt"></i>
+        </a>
+    </div>
+</div>
+
 @endsection
 
 @section('conteudo')
@@ -26,12 +40,14 @@ Consultas de {{$paciente->nome}}
             Avaliação do Progresso obtido: {{$consulta->progresso_obtido1_10}}<br>
             Análise psicológica geral: {{$consulta->analisePsiGeral1_10}}<br>
             <form method="post" action="/pacientes/{{$paciente->id}}/consultas" onsubmit="return confirm('Tem certeza que deseja remover consulta do dia: {{ addslashes( $consulta->data )}}?')">
-                    @csrf
-                    @method('DELETE')
-                    <button class="btn btn-danger btn-sm ml-2">
+            <button class="btn btn-danger btn-sm ml-2" type="submit" value="Delete">
                         <i class="far fa-trash-alt"></i>
-                    </button>
-                </form>
+            </button>
+            <input type="hidden" name="consultaId" value="{{$consulta->id}}" />
+            <input type="hidden" name="pacienteId" value="{{$paciente->id}}" />
+            <input type="hidden" name="_method" value="delete" />
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            </form>  
         </li>
     @endforeach
     @endif

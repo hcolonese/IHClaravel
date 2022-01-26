@@ -26,6 +26,15 @@ class PacientesController extends Controller
     }
 
     public function destroy(Request $request) {
+        $paciente = Paciente::find($request->id);
+        $nomePaciente = $paciente->nome;
+
+        $paciente->consultas->each(function ($consulta) {
+            $consulta->delete();
+    
+        });
+        $paciente->delete();
+
         Paciente::destroy($request->id);
         $request->session()->flash('mensagem',"Paciente removido com sucesso");
         return redirect()->route('listar_pacientes');

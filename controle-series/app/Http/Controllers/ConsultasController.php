@@ -28,11 +28,10 @@ class ConsultasController extends Controller
     }
 
     public function destroy(Request $request) {
-        // erro ta aqui, esse request só tras merda $pacienteId é null pq $request->paciente_id é null
-        // var_dump($request->paciente_id);
-        $pacienteId = $request->paciente_id;
-        Consulta::destroy($request->id);
+        $paciente_id = $request->pacienteId;
+        $consulta_id = $request->consultaId;
+        Consulta::destroy($consulta_id);
         $request->session()->flash("Consulta removida com sucesso");
-        return redirect()->route('listar_consultas', ['pacienteId' => $pacienteId]);
+        return redirect()->route('listar_consultas', ['pacienteId' => $paciente_id]);
     }
 }
