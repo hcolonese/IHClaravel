@@ -10,6 +10,9 @@
 </head>
 <body>
     <div class="container">
+        <div class="logo" >
+            <img src="../img/logoPsi.png" alt="fotooo">
+        </div>
         <div class="jumbotron">
             <h1>@yield('cabecalho')</h1>    
         </div>

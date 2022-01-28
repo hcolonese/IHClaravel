@@ -18,3 +18,7 @@ Route::get('/pacientes/{pacienteId}/consultas/criar', 'App\Http\Controllers\Cons
 Route::post('/pacientes/{pacienteId}/consultas/criar', 'App\Http\Controllers\ConsultasController@store');
 Route::delete('/pacientes/{pacienteId}/consultas', 'App\Http\Controllers\ConsultasController@destroy');
 
+Route::get('/login', 'App\Http\Controllers\UsuariosController@index')->name('page_login');
+Route::post('/login', 'App\Http\Controllers\UsuariosController@log');
+Route::get('/login/criar', 'App\Http\Controllers\UsuariosController@create');
+Route::post('/login/criar', 'App\Http\Controllers\UsuariosController@store');
