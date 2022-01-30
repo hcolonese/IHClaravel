@@ -21,7 +21,7 @@ class PacientesController extends Controller
 
     public function store(PacientesFormRequest $request) {
         $paciente = Paciente::create($request->all());
-        $request->session()->flash('mensagem',"Paciente {$paciente->id} criado com sucesso {$paciente->nome}");
+        $request->session()->flash('mensagem',"Paciente {$paciente->nome} criado com sucesso ");
         return redirect()->route('listar_pacientes');
     }
 

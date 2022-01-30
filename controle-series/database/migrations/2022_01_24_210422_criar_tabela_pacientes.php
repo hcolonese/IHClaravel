@@ -18,6 +18,7 @@ class CriarTabelaPacientes extends Migration
             $table->string(column: 'nome');
             $table->integer(column: 'idade');
             $table->string(column: 'cpf');
+            $table->string(column:'psiResp');
         });
     }
 

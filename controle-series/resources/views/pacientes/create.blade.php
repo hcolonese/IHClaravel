@@ -24,6 +24,8 @@ Adicionar Paciente
             <input type="int" class="form-control" name="idade" id="idade">
         <label for="cpf">CPF</label>
             <input type="text" class="form-control" name="cpf" id="cpf">
+        <label for="psiResp">Psicólogo responsável</label>
+            <input type="text" class="form-control" name="psiResp" id="psiResp">
     </div>
     <button class="btn btn-primary">Adicionar</button>
 </form>

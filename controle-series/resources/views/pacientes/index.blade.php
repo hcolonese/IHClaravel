@@ -2,7 +2,16 @@
 
 
 @section('cabecalho')
-Lista de Pacientes
+<div class="row d-flex justify-content-between align-items-center">
+    <div class="col col-11">
+        Lista de Pacientes
+    </div>
+    <div class="col align-items-center">
+        <a href="/login" class="btn btn-dark btn-sm mb-2 ">
+            <i class="fas fa-sign-out-alt"></i>
+        </a>
+    </div>
+</div
 @endsection
 
 @section('conteudo')
@@ -22,15 +31,18 @@ Lista de Pacientes
                 <br>
                 Idade: 
                 {{$paciente->idade}}
+                <br>
+                Psicólogo responsável: 
+                {{$paciente->psiResp}}
                 <span class="d-flex">
-                <a href="/pacientes/{{$paciente->id}}/consultas" class="btn btn-info btn-sm mr-2">
-                        <i class="fas fa-external-link-alt"></i>
+                <a href="/pacientes/{{$paciente->id}}/consultas" class="btn btn-dark btn-sm me-2">
+                    <i class="fas fa-notes-medical"></i>
                 </a>
                 <form method="post" action="/pacientes/{{ $paciente->id}}" onsubmit="return confirm('Tem certeza que deseja remover {{ addslashes( $paciente->nome )}}?')">
                     @csrf
                     @method('DELETE')
-                    <button class="btn btn-danger btn-sm">
-                        <i class="far fa-trash-alt"></i>
+                    <button class="btn btn-danger btn-sm me-2">
+                        <i class="fas fa-trash-alt"></i>
                     </button>
                 </form>
                 </span>

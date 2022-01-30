@@ -14,9 +14,7 @@ class UsuariosController extends Controller
     }
     
     public function log(Request $request) {
-        var_dump($request);
-        $usuario = Usuario::where('email','$request->email')->get();
-        return view ('pacientes.index', compact('usuario'));
+        return redirect()->route('listar_pacientes');
     }
 
     public function create() {
