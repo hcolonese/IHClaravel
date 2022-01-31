@@ -32,5 +32,11 @@ Cadastro
             <input type="text" class="form-control" name="chaveAutent" id="chaveAutent">    
     </div>
     <button class="btn btn-primary">Adicionar</button>
+
+    
 </form>
+<a href="/login" class="btn btn-dark mt-2">
+        Já tem cadastro? Faça login aqui
+        <i class="fas fa-user-plus"></i>
+    </a>
 @endsection

@@ -12,11 +12,11 @@ class Paciente extends Model
 
     public function consultas()
     {
-        return $this->hasMany( related: Consulta::class);
+        return $this->hasMany(Consulta::class);
     }
 
     public function usuario()
     {
-        return $this->belongsTo( related: Usuario::class);
+        return $this->belongsTo(Usuario::class);
     }
 }

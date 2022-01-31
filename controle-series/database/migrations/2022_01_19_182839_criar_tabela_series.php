@@ -14,8 +14,8 @@ class CriarTabelaSeries extends Migration
     public function up()
     {
         Schema::create('series', function (Blueprint $table) {
-            $table->increments(column:'id');
-            $table->string(column: 'nome');
+            $table->increments('id');
+            $table->string( 'nome');
         });
     }
 
@@ -26,6 +26,6 @@ class CriarTabelaSeries extends Migration
      */
     public function down()
     {
-        Schema::drop(table: 'series');
+        Schema::drop('series');
     }
 }

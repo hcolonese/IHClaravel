@@ -14,11 +14,11 @@ class CriarTabelaPacientes extends Migration
     public function up()
     {
         Schema::create('pacientes', function (Blueprint $table) {
-            $table->increments(column:'id');
-            $table->string(column: 'nome');
-            $table->integer(column: 'idade');
-            $table->string(column: 'cpf');
-            $table->string(column:'psiResp');
+            $table->increments('id');
+            $table->string( 'nome');
+            $table->integer( 'idade');
+            $table->string( 'cpf');
+            $table->string('psiResp');
         });
     }
 
@@ -29,6 +29,6 @@ class CriarTabelaPacientes extends Migration
      */
     public function down()
     {
-        Schema::drop(table: 'pacientes');
+        Schema::drop('pacientes');
     }
 }

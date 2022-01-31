@@ -15,12 +15,12 @@ class CriarTabelaUsuario extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->text(column:'email');
-            $table->text(column:'senha');
-            $table->text(column:'nome');
-            $table->text(column:'crp');
-            $table->text(column:'cpf');
-            $table->text(column:'chaveAutent');
+            $table->text('email');
+            $table->text('senha');
+            $table->text('nome');
+            $table->text('crp');
+            $table->text('cpf');
+            $table->text('chaveAutent');
         });
     }
 

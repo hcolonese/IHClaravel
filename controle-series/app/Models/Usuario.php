@@ -10,6 +10,6 @@ class Usuario extends Model
 
     public function pacientes()
     {
-        return $this->hasMany( related: Paciente::class);
+        return $this->hasMany(Paciente::class);
     }
 }

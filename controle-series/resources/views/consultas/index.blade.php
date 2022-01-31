@@ -36,6 +36,12 @@
             Com objetivo: {{ $consulta->objetivo}}<br>
             Avaliação do Progresso obtido: {{$consulta->progresso_obtido1_10}}<br>
             Análise psicológica geral: {{$consulta->analisePsiGeral1_10}}<br>
+            Estado Civil: {{ $consulta->estado_civil}}<br>
+            Filhos: {{ $consulta->filhos}}<br>
+            Quanto tempo está nessa situação: {{ $consulta->tempo}}<br>
+            Onde se encontra atualmente: {{ $consulta->lugar}}<br>
+            Vícios: {{ $consulta->vicios}}<br>
+            Prescrição Médica: {{ $consulta->remedios}}<br>
             <form method="post" action="/pacientes/{{$paciente->id}}/consultas" onsubmit="return confirm('Tem certeza que deseja remover consulta do dia: {{ addslashes( $consulta->data )}}?')">
             <button class="btn btn-danger btn-sm me-4" type="submit" value="Delete">
                         <i class="far fa-trash-alt"></i>
