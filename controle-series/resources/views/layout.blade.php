@@ -11,7 +11,7 @@
 <body>
     <div class="container">   
         <div class="logo d-flex justify-content-center align-items-center" style="background-color:#00d9ff">
-        <img src="{{ asset('storage/resources/img/logoPsi.png')}}" style="width: 200px; height: 200px;" />
+        <img src="{{ asset('/storage/img/logoPsi.png')}}" style="width: 200px; height: 200px;" />
         </div>
         <div class="jumbotron">
             <h1>@yield('cabecalho')</h1>    
